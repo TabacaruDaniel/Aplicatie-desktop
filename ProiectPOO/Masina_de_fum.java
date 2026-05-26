@@ -86,13 +86,13 @@ class Masina_de_fum extends Aparat implements Serializable {
                 stare_leduri[i] -= defectiuni[i];}
             for(int i=0;i<stare_leduri.length;i++){
 
-        if(stare_leduri[i] < 0) {
+        if(stare_leduri[i] <= 0) {
             stare_leduri[i] = 0;
-        }}
+        }
                 if (JOptionPane.showConfirmDialog(null, "Masinii de fum i s-au ars niste leduri\nDoriti sa schimbati ledul?", "Defectiune detectata", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                     cost_mentenanta(new Rezultat_masina_fum(false, 1,0 ,stare_leduri , 1, 1));
                 }
-            }
+            }}
             if (volum_curent > (cerinta / 4000)) moment_oprire = 1;//la o ora de functionare sacul se umple cam 3 litri
             else {
                 moment_oprire = rotunjire((volum_curent * 4000) / cerinta, 9);
